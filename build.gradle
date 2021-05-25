@@ -1,0 +1,42 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+   //para proyecto web   
+    id 'java-library'
+    id 'war'
+    id 'eclipse-wtp'
+    
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+	
+	// rest
+	compile group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '4.6.0.Final'
+	compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '4.6.0.Final'		
+	
+	// cdi+rest
+	compile group: 'org.jboss.resteasy', name: 'resteasy-cdi', version: '4.6.0.Final'
+	
+	// cdi
+	compile group: 'org.jboss.weld.servlet', name: 'weld-servlet-core', version: '3.1.6.Final'
+	
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+	
+	//convertir a JSON un cadena
+	//compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.0.pr2'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
+	
+	//
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+	
+	//------------CONSUL------------------
+     compile "com.ecwid.consul:consul-api:1.4.5"
+	
+
+}
